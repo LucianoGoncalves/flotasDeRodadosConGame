@@ -1,0 +1,8 @@
+import rodados.*
+import colores.*
+test "testX" {
+    const cachito = new ChevroletCorsa(color = "rojo", image = rojo.image())
+    
+	assert.that(true)
+
+}

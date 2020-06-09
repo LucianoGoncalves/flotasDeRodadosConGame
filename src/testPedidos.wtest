@@ -1,0 +1,32 @@
+import rodados.*
+import trafic.*
+import pedidos.*
+test "test 1 pedidos con cachito" {
+    const cachito = new ChevroletCorsa(color = "rojo")
+    const ped1 = new Pedidos(distancia = 960, tiempoMax = 8, cantPasajeros = 4, coloresIncop = #{"azul", "nergro"})
+    
+	assert.that(ped1.cumple(cachito))
+
+}
+
+test "test 2 pedidos con cachito" {
+    const cachito = new ChevroletCorsa(color = "rojo")
+    const ped1 = new Pedidos(distancia = 960, tiempoMax = 8, cantPasajeros = 4, coloresIncop = #{"azul", "nergro", "rojo"})
+    
+    assert.notThat(ped1.cumple(cachito))
+
+}
+
+test "test 3 pedidos con cachito" {
+    const cachito = new ChevroletCorsa(color = "rojo")
+    const ped1 = new Pedidos(distancia = 960, tiempoMax = 8, cantPasajeros = 6, coloresIncop = #{"azul", "nergro"})
+    
+    assert.notThat(ped1.cumple(cachito))
+}
+
+test "test 4 pedidos con cachito" {
+    const cachito = new ChevroletCorsa(color = "rojo")
+    const ped1 = new Pedidos(distancia = 960, tiempoMax = 6, cantPasajeros = 4, coloresIncop = #{"azul", "nergro"})
+    
+    assert.notThat(ped1.cumple(cachito))
+}
